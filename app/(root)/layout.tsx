@@ -1,4 +1,4 @@
-import Sidebar from "@/app/(root)/__components/Sidebar";
+import Navbar from "@/app/(root)/__components/Navbar";
 import MobileNavbar from "./__components/MobileNavbar";
 
 export default function RootLayout({
@@ -10,8 +10,8 @@ export default function RootLayout({
 
   return (
     <main className="flex h-screen w-full">
-      <Sidebar user={loggedInUser} />
-      <div className="flex size-full flex-col">
+      <Navbar user={loggedInUser} />
+      <div className="flex size-full flex-col font-inter">
         <MobileNavbar />
 
         {children}

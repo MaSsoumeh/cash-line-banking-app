@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "CashLine",
   description: "CashLine is a modern banking platform",
   icons: {
-    icon: "/icons/logo.svg",
+    icon: "/images/logo.svg",
   },
 };
 

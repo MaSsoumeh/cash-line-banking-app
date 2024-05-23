@@ -1,8 +1,16 @@
 import { Header } from "@/components/header";
 import React from "react";
 import TotalBalance from "./__components/TotalBalance";
+import RightSidebar from "./__components/RightSidebar";
+import RecentTransactions from "./__components/RecentTransactions";
 
 const Home = () => {
+  const loggedInUser = {
+    lastName: "Zarei",
+    firstName: "Masoumeh",
+    email: "zarei.massoumeh@gmail.com",
+  };
+
   return (
     <section className="no-scrollbar flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll">
       <div className="no-scrollbar flex w-full flex-1 flex-col gap-8 px-8 sm:px-8 py-12 lg:py-12 xl:max-h-screen xl:overflow-y-scroll">
@@ -10,6 +18,7 @@ const Home = () => {
           <Header
             type="greeting"
             title="Welcome,"
+            user={loggedInUser.firstName}
             subtext="Access & manage your account and transactions efficiently."
           />
         </header>
@@ -19,7 +28,11 @@ const Home = () => {
           totalBanks={MockAccounts.length}
           totalCurrentBalance={calculateTotalBalance(MockAccounts)}
         />
+
+        <RecentTransactions />
       </div>
+
+      <RightSidebar user={loggedInUser} transactions={[]} banks={[]} />
     </section>
   );
 };

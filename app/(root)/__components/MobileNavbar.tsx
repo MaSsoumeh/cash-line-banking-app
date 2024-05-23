@@ -15,7 +15,12 @@ import { usePathname } from "next/navigation";
 const MobileNavbar = () => {
   return (
     <section className="flex h-16 items-center justify-between p-5 shadow-creditCard sm:p-8 md:hidden">
-      <Image width={32} height={32} alt="cashLine logo" src="/icons/logo.svg" />
+      <Image
+        width={32}
+        height={32}
+        alt="cashLine logo"
+        src="/images/logo.svg"
+      />
 
       <Sheet>
         <SheetTrigger>
@@ -44,7 +49,12 @@ export default MobileNavbar;
 const NavbarHeader = () => {
   return (
     <div className="absolute top-3 flex gap-4">
-      <Image width={24} height={24} alt="cashLine logo" src="/icons/logo.svg" />
+      <Image
+        width={24}
+        height={24}
+        alt="cashLine logo"
+        src="/images/logo.svg"
+      />
       <p className="text-black-1 font-bold">CashLine</p>
     </div>
   );
@@ -53,7 +63,7 @@ const NavbarHeader = () => {
 const Menu = () => {
   const pathname = usePathname();
   return (
-    <nav className="flex flex-col gap-2 mt-16">
+    <nav className="flex flex-col gap-2 mt-9">
       {sidebarLinks.map((item) => {
         const isActive =
           item.route === pathname || pathname.startsWith(`${item.route}/`);

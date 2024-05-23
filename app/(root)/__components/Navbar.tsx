@@ -11,23 +11,31 @@ interface Props {
   user: Partial<User>;
 }
 
-const Sidebar: React.FC<Props> = ({ user }) => {
+const Navbar: React.FC<Props> = ({ user }) => {
   return (
     <section className="sticky left-0 top-0 flex h-screen w-fit flex-col justify-between border-r border-gray-200 bg-white text-white max-md:hidden sm:p-4 xl:p-6 xl:w-[355px]">
-      <nav className="flex flex-col gap-4">
-        <SidebarHeader />
+      <nav className="flex flex-col gap-3">
+        <NavbarHeader />
         <Menu />
       </nav>
     </section>
   );
 };
 
-export default Sidebar;
+export default Navbar;
 
-const SidebarHeader = () => {
+const NavbarHeader = () => {
   return (
-    <Link href="/" className="mb-12 items-center gap-4 flex">
-      <Image src="/icons/logo.svg" alt="cashLine logo" width={34} height={34} />
+    <Link
+      href="/"
+      className="items-center gap-4 mb-4 flex max-xl:justify-center"
+    >
+      <Image
+        width={34}
+        height={34}
+        alt="cashLine logo"
+        src="/images/logo.svg"
+      />
       <p className="2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden">
         CashLine
       </p>
@@ -44,7 +52,7 @@ const Menu = () => {
       <Link
         key={item.label}
         href={item.route}
-        className={cn("p-3 w-full rounded-lg", {
+        className={cn("px-3 py-4 w-full rounded-lg md:py-3", {
           "bg-blueGradient": isActive,
         })}
       >

@@ -14,8 +14,8 @@ const TotalBalance: React.FC<Props> = (props) => {
   const { accounts, totalBanks, totalCurrentBalance } = props;
 
   return (
-    <section className="flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-chart sm:gap-6 sm:p-6">
-      <div className="flex size-full max-w-[100px] items-center sm:max-w-[120px]">
+    <section className="flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-chart sm:gap-6 sm:p-6 h-[168px]">
+      <div className="flex size-full w-[100px] items-center">
         <DoughnutChart accounts={accounts} />
       </div>
 
